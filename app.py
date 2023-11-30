@@ -1,6 +1,7 @@
-import re, os, telegram
+import re, telegram
 from flask import Flask, request
 from dotenv import load_dotenv
+import asyncio
 
 load_dotenv()
 
@@ -58,7 +59,8 @@ def respond():
 
 @app.route('/set_webhook', methods=['GET', 'POST'])
 def set_webhook():
-   s = bot.setWebhook('{URL}{HOOK}'.format(URL=URL, HOOK=TOKEN))
+   print(URL)
+   s =  asyncio.run(bot.setWebhook(URL))
    if s:
        return "webhook setup ok"
    else:
