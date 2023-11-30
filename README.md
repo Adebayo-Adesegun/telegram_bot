@@ -22,4 +22,5 @@ Simple Telegram Bot Tryout
 
 - Run the project
    `gunicorn -b 0.0.0.0:8443 app:app`
+   `gunicorn -b 0.0.0.0:80 app:app --timeout 1000 --log-level debug --worker-class gthread`
 # telegram_bot
