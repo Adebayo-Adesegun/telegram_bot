@@ -21,5 +21,5 @@ Simple Telegram Bot Tryout
    `python3 manage.py makemigrations`
 
 - Run the project
-   `python3 manage.py runserver`
+   `gunicorn -b 0.0.0.0:8443 app:app`
 # telegram_bot
